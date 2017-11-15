@@ -20,16 +20,22 @@ public class AssaultRifle extends Weapon{
 	public boolean canTarget(Unit target) {
 		if(target instanceof Fanteria && target instanceof Vehicle)
 			return true;
+		return false;
 	}
 	
+	//@requests target!=null
+	//@ensures \result && \old(damTroops) = damTroops && \old(damHearth) = damHearth && \old(damAir) = damAir && \old(damWater) = damWater
 	@Override
 	public double damageRatio(Unit target){
 		if(target instanceof Fanteria)
 			return damTroops;
-		else if(target instanceof Vehicle)
-			//TODO sistema sta cazzo di enum
+		else if(target.getType().equals("TERRA"))
 			return damHearth;
-		
+		else if(target.getType().equals("ARIA"))
+			return damAir;
+		else if(target.getType().equals("ACQUA"))
+			return damWater;
+		}
 	}
 	
 }
