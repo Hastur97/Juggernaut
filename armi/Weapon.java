@@ -3,6 +3,7 @@ package armi;
 import unit.Fanteria;
 import unit.Unit;
 import unit.VehicleType;
+import unit.Vehicle;
 
 public class Weapon{
 	private double damTroops;
@@ -34,15 +35,19 @@ public class Weapon{
 		else if(this.ammo + ammo < 0)
 			this.ammo = 0;
 	}
-	
+	private double damageRatioVehicle(Vehicle target)
+        {
+            if(target.getType().equals("E"))
+		return damEarth;
+            else if(target.getType().equals("A"))
+		return damAir;
+            else
+		return damWater;
+        }
 	public double damageRatio(Unit target){
 		if(target instanceof Fanteria)
 			return damTroops;
-		else if(target.getType().equals("E"))
-			return damEarth;
-		else if(target.getType().equals("A"))
-			return damAir;
-		else if(target.getType().equals("W"))
-			return damWater;
+                else return damageRatioVehicle((Vehicle)target);
+		
 	}
 }
