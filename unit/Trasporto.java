@@ -9,13 +9,13 @@ package unit;
  *
  * @author Roberto
  */
-public interface Trasporto extends Vehicle{
-    public boolean canLoad();
+public abstract class Trasporto extends Vehicle{
+    public abstract boolean canLoad();
     
-    public void load(Unit target);
+    public abstract void load(Unit target);
     
-    public void unload(Unit target);
+    public abstract void unload(Unit target);
     
-    public boolean isEmpty();
+    public abstract boolean isEmpty();
     
 }

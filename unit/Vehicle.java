@@ -9,8 +9,23 @@ package unit;
  *
  * @author Roberto
  */
-public interface Vehicle extends Unit{
-    public int getFuel();
+public abstract class Vehicle extends Unit{
+    protected final VehicleType TYPE;
+    protected int fuel;
+    protected final int MAXFUEL;
     
-    public void setFuel(int fuel);
+    public VehicleType getType()
+    {
+        return TYPE;
+    }
+    
+    public int getFuel()
+    {
+        return fuel;
+    }
+    
+    public void setFuel(int fuel)
+    {
+        this.fuel = fuel;
+    }
 }
