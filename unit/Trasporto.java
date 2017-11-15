@@ -9,7 +9,7 @@ package unit;
  *
  * @author Roberto
  */
-public interface Trasporto extends Unit{
+public interface Trasporto extends Vehicle{
     public boolean canLoad();
     
     public void load(Unit target);
