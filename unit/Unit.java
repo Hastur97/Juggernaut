@@ -11,17 +11,19 @@ import utility.Posizione;
  * @author Roberto
  */
 public interface Unit {
-    public int getLife();
+    public double getLife();
     
     public Posizione getPosition();
 
     public boolean canMove();
     
-    public boolean canReach(Posizione target);
-    
-    public void setLife(int newValue);
+    public void setLife(double newValue);
     
     public void move(Posizione newPosizione);
     
-    public void shoot(Unit target);
+    public boolean shoot(Unit target);
+    
+    public double getCover();
+    
+    public boolean isBlue();
 }

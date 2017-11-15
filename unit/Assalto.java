@@ -4,15 +4,16 @@
  * and open the template in the editor.
  */
 package unit;
-
+import utility.Posizione;
+import armi.*;
 /**
  *
  * @author Roberto
  */
-public interface Vehicle extends Unit{
-    public VehicleType getType();
+public class Assalto implements Fanteria{
+    private Posizione pos;
+    private int life;
+    private Weapon firstWeapon;
+    private Weapon secondaryWeapon;
     
-    public int getFuel();
-    
-    public void setFuel(int fuel);
 }
