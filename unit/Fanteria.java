@@ -9,6 +9,9 @@ package unit;
  *
  * @author Roberto
  */
-public interface Fanteria extends Unit{
-    public void conqueer();
+public abstract class Fanteria extends Unit{
+    public void conqueer()
+    {
+        //do something
+    }
 }

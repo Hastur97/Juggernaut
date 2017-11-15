@@ -10,6 +10,7 @@ import armi.*;
  *
  * @author Roberto
  */
+/*
 public class Assalto implements Fanteria{
     private Posizione pos;
     private int life;
@@ -17,3 +18,4 @@ public class Assalto implements Fanteria{
     private Weapon secondaryWeapon;
     
 }
+*/
