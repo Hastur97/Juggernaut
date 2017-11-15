@@ -1,6 +1,9 @@
 package armi;
 
+import unit.Fanteria;
 import unit.Unit;
+import unit.Vehicle;
+import unit.VehicleType;
 
 public class AssaultRifle extends Weapon{
 	private double damTroops;
@@ -20,14 +23,13 @@ public class AssaultRifle extends Weapon{
 	}
 	
 	@Override
-	public void damageTarget(Unit atk, Unit def) {
-		private int damageatkdef = ;
-		private int damagedefatk = ;
-		if(atk.canTarget(def)==true){
-			atk.setLife(damagedefatk);
-			def.setLife(damageatkdef);
-		}
+	public double damageRatio(Unit target){
+		if(target instanceof Fanteria)
+			return damTroops;
+		else if(target instanceof Vehicle)
+			//TODO sistema sta cazzo di enum
+			return damHearth;
+		
 	}
-	
 	
 }

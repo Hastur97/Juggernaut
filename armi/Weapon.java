@@ -23,5 +23,5 @@ public abstract class Weapon{
 	
 	public abstract boolean canTarget(Unit target);
 	
-	public abstract void damageTarget(Unit atk, Unit def);
+	public abstract double damageRatio(Unit target);
 }
