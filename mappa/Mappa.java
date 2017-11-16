@@ -16,21 +16,18 @@ public class Mappa {
 		return mappa;
 	}
 	
-	public void buildMap(Casella[][] mappa) throws IOException, EOFException, FileNotFoundException{
+	//TODO exception custom per fallimento di caricamento della mappa
+	public void buildMap(Casella[][] mappa) throws EOFException, FileNotFoundException{
 		FileReader f = null;
 		try {
 			f = new FileReader("/mapstobuild/mappa1.txt");
 		} catch (FileNotFoundException e) {
+			//TODO
 			e.printStackTrace();
 		}
 		BufferedReader b=null;
-		
-		try{
-			b = new BufferedReader(f);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
+
+		b = new BufferedReader(f);
 		String s;
 		
 		for(int i=0; i<SIZE; i++){
@@ -65,10 +62,9 @@ public class Mappa {
 							}
 						}
 					}else
-						//TODO controlla questo throw!!
 						throw new EOFException();
 				}
-				catch (EOFException e){
+				catch (IOException e){
 					e.printStackTrace();
 				}
 			}
